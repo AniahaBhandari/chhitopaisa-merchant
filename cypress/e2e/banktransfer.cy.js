@@ -1,0 +1,18 @@
+describe('banktransfer', ()=>{
+it('testbank', ()=>{
+cy.login()
+cy.visit('http://uatmerchant.chhitopaisa.com.np/BankTransfer/Banklist')
+cy.contains('Test Bank (NBL)').click()
+cy.get('#AccountNumber').type('1900000000000173')
+cy.get('#AccountName').type('Rohan maharjan')
+cy.get('#Amount').type('100')
+cy.get('#Remarks').type('test purpose')
+cy.get('[name="txtSearch"]').click()
+cy.contains('CONFIRM').click()
+cy.wait(2000)
+cy.get('[type="password"]').eq(0).type('1234')
+cy.get('[type="submit"]').click()
+.wait(5000)
+cy.contains('Close').click()
+})
+})
