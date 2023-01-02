@@ -13,5 +13,6 @@ cy.contains(`SUBMIT`).click()
 cy.contains(`CONFIRM`).click()
 cy.get(`[type="password"]`).eq(0).type(`1234`)
 cy.get(`#btnConfirmmodal`).click()
+
     })
 })

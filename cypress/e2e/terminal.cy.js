@@ -1,0 +1,15 @@
+describe('terminal', ()=>{
+    it('add terminal user',()=>{
+        cy.login()
+        cy.visit('http://uatmerchant.chhitopaisa.com.np/TerminalManagement/Index')
+        cy.contains(`Add New`).click()
+        cy.get(`#AgentName`).type(`terimeri`)
+        cy.get(`#UserForm`).click()
+        cy.get(`#FirstName`).type(`meri`)
+        cy.get(`#LastName`).type(`teri`)
+        cy.get(`#UserName`).type(`meriteri`)
+        cy.get(`#UserMobileNo`).type(`9867659555`)
+        cy.get(`#UserEmailAddress`).type(`teri@gmail.com`)
+        cy.get(`#BusinessSubmit`).click()
+    })
+})

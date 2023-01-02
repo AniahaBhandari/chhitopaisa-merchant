@@ -1,0 +1,15 @@
+describe('userlist', ()=>{
+    it('add secondary user',()=>{
+        cy.login()
+        cy.visit('http://uatmerchant.chhitopaisa.com.np/MerchantManagement/Index')
+        cy.contains(`Add New`).click()
+        cy.get(`#UserName`).type(`Kridha`)
+        cy.get(`#FirstName`).type(`Kridha`)
+        cy.get(`#LastName`).type(`dhaki`)
+        cy.get(`#MobileNumber`).type(`9867645354`)
+        cy.get(`#Email`).type(`kri@gmail.com`)
+        cy.get(`.select2-selection__rendered`).click()
+        cy.get(`.select2-results`).contains(`Abc`).click()
+        cy.get(`#btnSubmit`).click()
+    })
+})

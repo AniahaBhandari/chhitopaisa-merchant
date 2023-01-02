@@ -1,0 +1,25 @@
+describe('bulk transaction',()=>{
+    it('upload csv file',()=>{
+        cy.login()
+        cy.wait(5000)
+        cy.visit('http://uatmerchant.chhitopaisa.com.np/BulkUploads/BulkUpload')
+        //cy.get('[title="CSV Upload"]').click()
+      // cy.get('#BulkUpload').selecFile('cypress\fixtures\file.csv')
+      cy.get(`[name="BulkUpload"]`).selectFile(`cypress/fixtures/file.csv`)
+
+      cy.get(`.btn`).contains(`Upload`).click()
+      cy.wait(5000)
+      cy.get('#bulkuploads').click()
+      // cy.get('#bulkuploads > .agenttopup_btn')
+      // cy.get('.agenttopup_btn').contains('continue').click()
+       cy.get('#first_btn').click()
+       cy.get('[type="password"]').eq(0).type('1111')
+       .wait(2000)
+       cy.get("#btnConfirmmodal").contains('CONFIRM').click()
+       cy.get('.btn-primary').contains('Continue').click()
+       cy.get('.btn-primary').contains('Back').click()
+       .wait(5000)
+       cy.visit('http://uatmerchant.chhitopaisa.com.np/Report/BalanceTransferReport')
+
+    })
+})
